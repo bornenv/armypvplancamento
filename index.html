@@ -41,6 +41,86 @@ html:not(.army-ok) body{opacity:0;animation:army-in 0s linear 1.8s forwards}
 .army-tag-meta{margin-left:auto;font-stretch:125%;font-weight:800;font-size:11px;letter-spacing:.18em;color:var(--color-neutral-400)}
 @media (max-width:560px){.army-tag-meta{flex-basis:100%;margin-left:0}}
 @media (max-width:389px){.army-tag--sm{display:none}}
+.army-rec-grid{margin-top:clamp(32px,4vw,56px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-areas:"copy steps" "cta steps";gap:clamp(28px,3vw,40px) clamp(28px,4vw,64px)}
+.army-rec-copy{grid-area:copy;display:flex;flex-direction:column;gap:24px;min-width:0}
+.army-rec-title{margin:0;font-family:var(--font-heading);font-stretch:62%;font-weight:900;font-size:clamp(52px,6vw,104px);line-height:.86;text-transform:uppercase}
+.army-rec-text{margin:0;max-width:520px;font-size:clamp(16px,1.25vw,19px);line-height:1.55;color:var(--color-neutral-300);text-wrap:pretty}
+.army-rec-reward{display:grid;grid-template-columns:minmax(116px,.42fr) minmax(0,1fr);gap:2px;background:var(--color-divider);border:2px solid var(--color-divider)}
+.army-rec-gem{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px 12px 16px;background:repeating-linear-gradient(0deg,color-mix(in srgb,var(--color-text) 4%,transparent) 0 1px,transparent 1px 4px),var(--color-bg);font-family:var(--font-heading);font-stretch:62%;font-weight:900;font-size:clamp(22px,2vw,28px);line-height:1;color:var(--color-accent);white-space:nowrap}
+.army-rec-gem svg{display:block;width:clamp(64px,6vw,92px);height:auto}
+.army-rec-gem i{position:absolute;width:12px;height:12px;border:0 solid var(--color-accent)}
+.army-rec-value{display:flex;flex-direction:column;justify-content:center;gap:12px;min-width:0;padding:clamp(16px,2vw,26px);background:var(--color-bg)}
+.army-rec-value strong{display:block;font-family:var(--font-heading);font-stretch:62%;font-weight:900;font-size:clamp(34px,3.6vw,58px);line-height:.92;text-transform:uppercase}
+.army-rec-value strong span{display:block;color:var(--color-accent)}
+.army-rec-value p{margin:0;font-size:14px;line-height:1.5;color:var(--color-neutral-300);text-wrap:pretty}
+.army-rec-steps{grid-area:steps;display:grid;grid-auto-rows:1fr;min-width:0;margin:0;padding:0;list-style:none;border-top:2px solid var(--color-divider)}
+.army-rec-step{display:grid;grid-template-columns:clamp(56px,6vw,88px) minmax(0,1fr);gap:12px;align-items:center;padding:clamp(18px,2vw,28px) 0;border-bottom:1px solid var(--color-divider)}
+.army-rec-num{font-family:var(--font-heading);font-stretch:62%;font-weight:900;font-size:clamp(44px,4.4vw,68px);line-height:1;color:var(--color-accent)}
+.army-rec-step h3{margin:0 0 8px;font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:clamp(13px,1.1vw,16px);line-height:1.3;letter-spacing:.12em;text-transform:uppercase}
+.army-rec-step p{margin:0;font-size:clamp(15px,1.1vw,17px);line-height:1.5;color:var(--color-neutral-300);text-wrap:pretty}
+.army-rec-cta{grid-area:cta;display:flex;flex-direction:column;align-items:flex-start;gap:14px;min-width:0}
+.army-rec-call{margin:0;max-width:560px;font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:clamp(13px,1vw,15px);line-height:1.5;letter-spacing:.14em;text-transform:uppercase}
+.army-rec-note{margin:0;font-size:13px;line-height:1.5;color:var(--color-neutral-400)}
+.army-rec-rules{margin:clamp(32px,4vw,48px) 0 0;padding-top:18px;border-top:1px solid var(--color-divider);font-size:13px;line-height:1.6;color:var(--color-neutral-400);text-wrap:pretty}
+@media (max-width:960px){.army-rec-grid{grid-template-columns:minmax(0,1fr);grid-template-areas:"copy" "steps" "cta"}.army-rec-steps{grid-auto-rows:auto}}
+@media (max-width:560px){.army-rec-btn{width:100%;box-sizing:border-box}}
+@media (max-width:480px){#recrutamento .army-tag-label{font-size:5.3vw}}
+@media (max-width:359px){.army-rec-reward{grid-template-columns:minmax(0,1fr)}#recrutamento .army-tag-label{white-space:normal}}
+.army-fx-embers{position:fixed;inset:0;width:100%;height:100%;z-index:5;pointer-events:none}
+.army-fx-progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:200;overflow:hidden;pointer-events:none}
+.army-fx-progress i{position:absolute;inset:0;background:var(--color-accent);transform:translateX(-100%)}
+.army-fx-rail{position:absolute;left:0;right:0;top:-2px;height:2px;z-index:2;overflow:hidden;pointer-events:none}
+.army-fx-rail--b{top:auto;bottom:-2px}
+.army-fx-rail i{position:absolute;top:0;left:0;width:min(46vw,520px);height:100%;background:linear-gradient(90deg,transparent,var(--color-accent) 85%,#fff);transform:translateX(-100%)}
+html.army-aim .army-fx-art{transform:translate3d(var(--px,0),var(--py,0),0) scale(1.05);transition:transform .5s ease-out}
+.army-fx-scan{position:absolute;left:0;right:0;top:0;height:18%;background:linear-gradient(180deg,transparent,color-mix(in srgb,var(--color-accent) 10%,transparent) 94%,color-mix(in srgb,var(--color-accent) 55%,transparent));animation:army-scan 7s linear infinite}
+@keyframes army-scan{0%{transform:translateY(-100%)}55%,100%{transform:translateY(560%)}}
+.army-flip{margin:0;position:relative;min-width:0;perspective:1400px;cursor:pointer;outline-offset:4px}
+.army-flip-card{display:grid;grid-template-columns:minmax(0,1fr);height:100%;transform-style:preserve-3d;transition:transform .75s cubic-bezier(.2,.75,.1,1)}
+.army-flip-face{grid-area:1/1;align-self:stretch;position:relative;box-sizing:border-box;min-width:0;overflow:hidden;border:2px solid var(--color-divider);background:var(--color-bg);-webkit-backface-visibility:hidden;backface-visibility:hidden}
+.army-flip:focus-visible .army-flip-card,.army-flip.is-flipped .army-flip-card{transform:rotateY(180deg)}
+.army-flip-card::before{content:"";grid-area:1/1;align-self:start;width:100%;aspect-ratio:1536/1024}
+.army-fx-skin img{object-fit:cover;animation:army-zap 6s linear infinite}
+.army-flip-hint{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);padding:4px 8px;background:color-mix(in srgb,var(--color-bg) 78%,transparent);font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:10px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;color:var(--color-neutral-200)}
+.army-flip-hint-t{display:none}
+.army-flip-back{transform:rotateY(180deg);display:flex;flex-direction:column;justify-content:center;gap:clamp(8px,1vw,14px);padding:clamp(16px,2.2vw,32px);border-color:var(--color-accent);background:repeating-linear-gradient(0deg,color-mix(in srgb,var(--color-text) 3%,transparent) 0 1px,transparent 1px 4px),var(--color-bg)}
+.army-flip-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.army-flip-kicker{display:block;margin-bottom:6px;font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:11px;letter-spacing:.16em;line-height:1.3;text-transform:uppercase;color:var(--color-accent)}
+.army-flip-title{margin:0;font-family:var(--font-heading);font-stretch:62%;font-weight:900;font-size:clamp(36px,4vw,64px);line-height:.9;text-transform:uppercase}
+.army-flip-stamp{flex:none;padding:5px 9px 4px;border:2px solid var(--color-accent);font-family:var(--font-heading);font-stretch:62%;font-weight:900;font-size:clamp(15px,1.4vw,20px);line-height:1;letter-spacing:.04em;text-transform:uppercase;color:var(--color-accent);transform:rotate(5deg)}
+.army-flip-text{margin:0;font-size:clamp(14px,1.1vw,16px);line-height:1.45;color:var(--color-neutral-300);text-wrap:pretty}
+.army-flip-text strong{color:var(--color-text)}
+.army-flip-specs{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px;border-top:1px solid var(--color-divider)}
+.army-flip-specs div{min-width:0;padding:7px 0;border-bottom:1px solid var(--color-divider)}
+.army-flip-specs dt{font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:10px;letter-spacing:.14em;line-height:1.3;text-transform:uppercase;color:var(--color-neutral-400)}
+.army-flip-specs dd{margin:2px 0 0;font-family:var(--font-heading);font-stretch:62%;font-weight:900;font-size:clamp(17px,1.4vw,21px);line-height:1.1;text-transform:uppercase}
+@media (hover:none){.army-flip-hint-m{display:none}.army-flip-hint-t{display:inline}}
+@media (max-width:560px){.army-fx-skin{background:#000}.army-fx-skin img{object-fit:contain}}
+@keyframes army-zap{0%,91%,93%,95%,97%,100%{filter:none}92%,96%{filter:brightness(1.35) saturate(1.2)}}
+a.btn,button.btn{position:relative;overflow:hidden;transition:background-color .15s,color .15s,border-color .15s,transform .15s}
+.btn::after{content:"";position:absolute;top:-10%;bottom:-10%;left:0;width:34%;background:color-mix(in srgb,#fff 38%,transparent);transform:translateX(-160%) skewX(-22deg);pointer-events:none}
+.btn-secondary::after{background:color-mix(in srgb,var(--color-accent) 22%,transparent)}
+.btn svg{transition:transform .2s}
+.btn:active{transform:translateY(1px) scale(.985)}
+.army-fx-row{position:relative}
+.army-fx-row::before{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--color-accent);transform:scaleX(0);transform-origin:0 50%;transition:transform .45s cubic-bezier(.2,.75,.1,1)}
+.army-fx-row>span:first-child{transition:transform .3s cubic-bezier(.2,.75,.1,1)}
+@media (hover:hover){
+.army-flip:hover .army-flip-card{transform:rotateY(180deg)}
+.btn:hover::after{transform:translateX(420%) skewX(-22deg);transition:transform .6s cubic-bezier(.2,.75,.1,1)}
+.btn:hover svg{transform:translateX(3px)}
+.army-fx-row:hover::before{transform:scaleX(1)}
+.army-fx-row:hover>span:first-child{transform:translateX(6px)}
+}
+.army-rec-gem{overflow:hidden}
+.army-rec-gem svg{animation:army-float 4s ease-in-out infinite}
+.army-rec-gem::after{content:"";position:absolute;top:-20%;bottom:-20%;left:0;width:30%;background:color-mix(in srgb,#fff 14%,transparent);transform:translateX(-140%) skewX(-22deg);animation:army-glint 5.5s ease-in-out infinite;pointer-events:none}
+@keyframes army-float{0%,100%{transform:translateY(2px)}50%{transform:translateY(-3px)}}
+@keyframes army-glint{0%{transform:translateX(-140%) skewX(-22deg)}40%,100%{transform:translateX(520%) skewX(-22deg)}}
+.army-fx-hit{position:fixed;width:0;height:0;z-index:290;pointer-events:none}
+.army-fx-hit b{position:absolute;left:-5px;top:-5px;width:10px;height:10px;border-radius:50%;background:#000;box-shadow:0 0 0 2px var(--color-accent)}
+.army-fx-hit i{position:absolute;left:-1px;top:-1px;width:2px;height:8px;background:var(--color-accent)}
+@media (prefers-reduced-motion:reduce){.army-fx-scan,.army-rec-gem::after,.btn::after{display:none}.army-fx-skin img,.army-rec-gem svg{animation:none}.army-flip-card{transition:none}}
 </style>
 </helmet>
 <div ref="{{ rootRef }}" style="position:relative;min-height:100svh;display:flex;flex-direction:column;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);overflow:clip">
@@ -51,13 +131,15 @@ html:not(.army-ok) body{opacity:0;animation:army-in 0s linear 1.8s forwards}
 
 <div style="position:relative;min-height:calc(100svh - 56px);display:flex;flex-direction:column">
 <div data-art="" aria-hidden="true" style="position:absolute;top:70px;right:0;bottom:0;width:min(100%,max(min(50%,780px),calc((960px - 100vw) * 999)));z-index:0;pointer-events:none;overflow:hidden">
-<img src="assets/hero-operador.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 16%;display:block">
+<img src="assets/hero-operador.jpg" alt="" class="army-fx-art" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 16%;display:block">
+<div class="army-fx-scan"></div>
 <div style="position:absolute;inset:0;background:linear-gradient(90deg,var(--color-bg) 0%,transparent 42%),linear-gradient(0deg,var(--color-bg) 0%,transparent 24%)"></div>
 <div style="position:absolute;top:0;left:0;bottom:0;width:min(100%,max(0px,calc((960px - 100vw) * 999)));background:color-mix(in srgb,var(--color-bg) 74%,transparent)"></div>
 <div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,color-mix(in srgb,var(--color-bg) 30%,transparent) 0 1px,transparent 1px 4px)"></div>
 </div>
 
 <header style="position:relative;z-index:2;background:var(--color-bg);border-bottom:2px solid var(--color-divider)">
+<div class="army-fx-rail army-fx-rail--b" aria-hidden="true"><i></i></div>
 <div style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,56px);height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px">
 <img src="assets/army-logo-alpha.png" alt="ARMY PVP" style="height:24px;width:auto;display:block">
 <span class="army-tag army-tag--sm"><span ref="{{ dotRef }}" class="army-tag-round"></span><span class="army-tag-label">{{ headStatus }}</span></span>
@@ -140,26 +222,79 @@ html:not(.army-ok) body{opacity:0;animation:army-in 0s linear 1.8s forwards}
 </div>
 
 <section id="beta" style="position:relative;z-index:1;border-top:2px solid var(--color-divider);background:var(--color-bg)">
+<div class="army-fx-rail" aria-hidden="true"><i></i></div>
 <div style="max-width:1440px;margin:0 auto;padding:clamp(18px,2.4vw,24px) clamp(20px,4vw,56px) clamp(64px,8vw,112px)">
 <div data-rv="0" class="army-tag">
 <span class="army-tag-round"></span><span class="army-tag-label">Recompensa beta</span><span class="army-tag-ticks"></span><span class="army-tag-meta">Glock Rajada</span>
 </div>
 <div style="margin-top:clamp(32px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(28px,4vw,64px);align-items:center">
-<figure data-rv="1" style="margin:0;position:relative;border:2px solid var(--color-divider);background:var(--color-bg);aspect-ratio:1536/1024;overflow:hidden">
-<img src="assets/skin-beta.webp" alt="Skin ARMY da Pistola AP e da Five-Seven" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+<figure data-rv="1" class="army-flip" role="group" tabindex="0" aria-label="Skin ARMY da Glock Rajada, exclusiva do beta" onClick="{{ flipSkin }}">
+<div class="army-flip-card">
+<div class="army-flip-face army-fx-skin">
+<img src="assets/skin-beta.webp" alt="Skin ARMY da GLOCK RAJADA" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;display:block">
 <span style="position:absolute;top:14px;left:14px;width:22px;height:22px;border-top:2px solid var(--color-accent);border-left:2px solid var(--color-accent)"></span><span style="position:absolute;top:14px;right:14px;width:22px;height:22px;border-top:2px solid var(--color-accent);border-right:2px solid var(--color-accent)"></span><span style="position:absolute;bottom:14px;left:14px;width:22px;height:22px;border-bottom:2px solid var(--color-accent);border-left:2px solid var(--color-accent)"></span><span style="position:absolute;bottom:14px;right:14px;width:22px;height:22px;border-bottom:2px solid var(--color-accent);border-right:2px solid var(--color-accent)"></span>
+<span class="army-flip-hint"><span class="army-flip-hint-m">Passe o mouse para ver detalhes</span><span class="army-flip-hint-t">Toque para ver detalhes</span></span>
+</div>
+<div class="army-flip-face army-flip-back">
+<div class="army-flip-head"><div><span class="army-flip-kicker">Recompensa do beta</span><h3 class="army-flip-title">Skin ARMY</h3></div><span class="army-flip-stamp">Exclusiva</span></div>
+<p class="army-flip-text">Esta skin é exclusiva do beta. Quando o beta acabar, ela <strong>não volta ao servidor</strong>. Quem garantir a tag Beta fica com ela liberada na conta.</p>
+<dl class="army-flip-specs">
+<div><dt>Arma</dt><dd>Glock Rajada</dd></div>
+<div><dt>Edição</dt><dd>Beta</dd></div>
+<div><dt>Disponível</dt><dd>Só no beta</dd></div>
+<div><dt>Retorno</dt><dd>Não volta</dd></div>
+</dl>
+</div>
+</div>
 </figure>
 <div data-rv="2" style="display:flex;flex-direction:column;gap:24px;min-width:0">
 <h2 style="margin:0;font-family:var(--font-heading);font-stretch:62%;font-weight:900;font-size:clamp(52px,6vw,104px);line-height:.86;text-transform:uppercase">Ganhe a<br><span style="color:var(--color-accent)">skin ARMY.</span></h2>
-<p style="margin:0;max-width:520px;font-size:clamp(16px,1.25vw,19px);line-height:1.55;color:var(--color-neutral-300);text-wrap:pretty">Faça login com o Discord e garanta a tag Beta. A skin ARMY da Pistola AP e da Five-Seven fica liberada na sua conta.</p>
+<p style="margin:0;max-width:520px;font-size:clamp(16px,1.25vw,19px);line-height:1.55;color:var(--color-neutral-300);text-wrap:pretty">Faça login com o Discord e garanta a tag Beta. A skin ARMY da GLOCK RAJADA fica liberada na sua conta.</p>
 <div style="display:flex;flex-direction:column;border-top:2px solid var(--color-divider)">
-<div style="display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--color-divider)"><span style="font-family:var(--font-heading);font-stretch:62%;font-weight:900;font-size:26px;line-height:1;color:var(--color-accent)">01</span><span style="font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase">Entre com o Discord</span></div>
-<div style="display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--color-divider)"><span style="font-family:var(--font-heading);font-stretch:62%;font-weight:900;font-size:26px;line-height:1;color:var(--color-accent)">02</span><span style="font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase">Garanta a tag Beta</span></div>
-<div style="display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--color-divider)"><span style="font-family:var(--font-heading);font-stretch:62%;font-weight:900;font-size:26px;line-height:1;color:var(--color-accent)">03</span><span style="font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase">Skin liberada na sua conta</span></div>
+<div data-rv="3" class="army-fx-row" style="display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--color-divider)"><span style="font-family:var(--font-heading);font-stretch:62%;font-weight:900;font-size:26px;line-height:1;color:var(--color-accent)">01</span><span style="font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase">Entre com o Discord</span></div>
+<div data-rv="4" class="army-fx-row" style="display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--color-divider)"><span style="font-family:var(--font-heading);font-stretch:62%;font-weight:900;font-size:26px;line-height:1;color:var(--color-accent)">02</span><span style="font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase">Garanta a tag Beta</span></div>
+<div data-rv="5" class="army-fx-row" style="display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--color-divider)"><span style="font-family:var(--font-heading);font-stretch:62%;font-weight:900;font-size:26px;line-height:1;color:var(--color-accent)">03</span><span style="font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase">Skin liberada na sua conta</span></div>
 </div>
 <a href="{{ betaUrl }}" target="_blank" rel="noopener" class="btn btn-primary" style="align-self:flex-start;height:60px;min-width:260px;padding:0 20px;justify-content:space-between;gap:36px;text-decoration:none;color:var(--color-bg);font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:14px;letter-spacing:.12em;text-transform:uppercase" style-hover="background:var(--color-accent-400);color:var(--color-bg)"><span>Garantir tag Beta</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
 </div>
 </div>
+</div>
+</section>
+
+<section id="recrutamento" aria-labelledby="recrutamento-titulo" style="position:relative;z-index:1;border-top:2px solid var(--color-divider);background:var(--color-bg)">
+<div class="army-fx-rail" aria-hidden="true"><i></i></div>
+<div style="max-width:1440px;margin:0 auto;padding:clamp(18px,2.4vw,24px) clamp(20px,4vw,56px) clamp(48px,6vw,80px)">
+<div data-rv="0" class="army-tag">
+<span class="army-tag-round"></span><span class="army-tag-label">Programa de recrutamento</span><span class="army-tag-ticks"></span><span class="army-tag-meta">Via Discord</span>
+</div>
+<div class="army-rec-grid">
+<div data-rv="1" class="army-rec-copy">
+<h2 id="recrutamento-titulo" class="army-rec-title">Recrute.<br><span style="color:var(--color-accent)">Ganhe Diamantes.</span></h2>
+<p class="army-rec-text">Convide jogadores para o ARMY usando seu link exclusivo. Cada novo jogador que entrar no servidor pelo seu link e concluir os requisitos rende 1 Diamante para sua conta.</p>
+<div class="army-rec-reward">
+<div class="army-rec-gem" aria-hidden="true">
+<i style="top:8px;left:8px;border-top-width:2px;border-left-width:2px"></i><i style="top:8px;right:8px;border-top-width:2px;border-right-width:2px"></i><i style="bottom:8px;left:8px;border-bottom-width:2px;border-left-width:2px"></i><i style="bottom:8px;right:8px;border-bottom-width:2px;border-right-width:2px"></i>
+<svg viewBox="0 0 96 84" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M34 30 48 6l14 24z" fill="currentColor"></path><path d="M34 30h28L48 78z" fill="currentColor" fill-opacity=".18"></path><path d="M20 6h56l16 24-44 48L4 30z"></path><path d="M4 30h88M20 6l14 24 14-24 14 24 14-24M34 30l14 48 14-48"></path></svg>
+<span>1 = R$ 1</span>
+</div>
+<div class="army-rec-value">
+<strong>1 recruta <span>= 1 diamante</span></strong>
+<p>1 Diamante equivale a R$ 1 em valor dentro do ARMY.</p>
+</div>
+</div>
+</div>
+<ol class="army-rec-steps">
+<li data-rv="2" class="army-rec-step army-fx-row"><span class="army-rec-num">01</span><div><h3>Entre no Discord</h3><p>Acesse a comunidade oficial do ARMY.</p></div></li>
+<li data-rv="3" class="army-rec-step army-fx-row"><span class="army-rec-num">02</span><div><h3>Gere seu link</h3><p>Utilize o sistema de recrutamento dentro do Discord para receber seu link exclusivo.</p></div></li>
+<li data-rv="4" class="army-rec-step army-fx-row"><span class="army-rec-num">03</span><div><h3>Recrute e ganhe</h3><p>Cada jogador válido recrutado rende 1 Diamante para sua conta.</p></div></li>
+</ol>
+<div data-rv="2" class="army-rec-cta">
+<p class="army-rec-call">Monte seu esquadrão. Acumule Diamantes. Comece o lançamento na frente.</p>
+<a href="{{ discordUrl }}" target="_blank" rel="noopener" data-cta="discord-recrutamento" aria-label="Gerar meu link de recrutamento no Discord (abre em nova aba)" class="btn btn-primary army-rec-btn" style="height:60px;min-width:260px;padding:0 20px;justify-content:space-between;gap:36px;text-decoration:none;color:var(--color-bg);font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:14px;letter-spacing:.12em;text-transform:uppercase" style-hover="background:var(--color-accent-400);color:var(--color-bg)"><span>Gerar meu link</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+<p class="army-rec-note">Seu link exclusivo será gerado dentro do Discord.</p>
+</div>
+</div>
+<p data-rv="1" class="army-rec-rules">A indicação será validada após o novo jogador vincular sua conta e cumprir os requisitos mínimos dentro do servidor. Contas falsas ou duplicadas não serão recompensadas. Os Diamantes promocionais possuem valor apenas dentro do ARMY e não podem ser sacados.</p>
 </div>
 </section>
 
@@ -169,6 +304,9 @@ html:not(.army-ok) body{opacity:0;animation:army-in 0s linear 1.8s forwards}
 <span style="display:flex;align-items:center;gap:12px"><span style="font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:10px;letter-spacing:.2em;text-transform:uppercase">Não recomendado para menores de 18 anos</span><span role="img" aria-label="18 anos" style="width:34px;height:34px;flex:none;background:#000;border:1px solid var(--color-divider);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-stretch:62%;font-weight:900;font-size:22px;line-height:1;color:#fff">18</span></span>
 </div>
 </footer>
+
+<canvas data-embers="" class="army-fx-embers" aria-hidden="true"></canvas>
+<div class="army-fx-progress" aria-hidden="true"><i data-progress=""></i></div>
 
 <div ref="{{ reticleRef }}" aria-hidden="true" style="position:fixed;left:0;top:0;z-index:300;pointer-events:none;opacity:0;will-change:transform">
 <div data-recoil="" style="position:absolute;left:0;top:0">
@@ -246,7 +384,7 @@ class Component extends DCLogic {
     window.addEventListener('mousemove', this.onMouse, { passive: true }); window.addEventListener('mousedown', this.onDown);
     document.addEventListener('mouseover', this.onOver); document.documentElement.addEventListener('mouseleave', this.onLeave);
     document.addEventListener('visibilitychange', this.onVis);
-    this.setupCursor(); this.tick(); this.setupReveals();
+    this.setupCursor(); this.tick(); this.setupReveals(); this.setupFx();
     armyAssets().then(() => { if (this._alive) requestAnimationFrame(() => { armyShow(); this.animIn(); }); });
   }
   componentWillUnmount() {
@@ -254,6 +392,7 @@ class Component extends DCLogic {
     window.removeEventListener('mousemove', this.onMouse); window.removeEventListener('mousedown', this.onDown);
     document.removeEventListener('mouseover', this.onOver); document.documentElement.removeEventListener('mouseleave', this.onLeave);
     document.removeEventListener('visibilitychange', this.onVis);
+    this.stopFx();
     document.documentElement.classList.remove('army-aim'); if (this.cursorStyle) this.cursorStyle.remove();
   }
   componentDidUpdate() {
@@ -286,23 +425,33 @@ class Component extends DCLogic {
   // seção da recompensa: entra ao rolar
   setupReveals() {
     const root = this.rootRef.current; if (!root || this.reduced || !('IntersectionObserver' in window)) return;
-    this.io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting && e.target._rv) { this.io.unobserve(e.target); e.target._rv.play(); if (e.target._tk) e.target._tk.play(); } }), { threshold: 0.12 });
+    this.io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting && e.target._rv) { this.io.unobserve(e.target); e.target._rv.play(); if (e.target._tk) e.target._tk.forEach((b) => b.play()); } }), { threshold: 0.12 });
     root.querySelectorAll('[data-rv]').forEach((el) => {
       const a = el.animate([{ opacity: 0, transform: 'translateY(32px)' }, { opacity: 1, transform: 'none' }], { duration: 900, delay: +(el.getAttribute('data-rv') || 0) * 110, easing: EASE, fill: 'both' });
       a.pause(); a.onfinish = () => a.cancel(); el._rv = a; this.io.observe(el);
-      const tk = el.querySelector('.army-tag-ticks');
-      if (tk) { const b = this.fireTicks(tk, 380); b.pause(); el._tk = b; }
+      if (el.classList.contains('army-tag')) { el._tk = this.fireTag(el, 180); el._tk.forEach((b) => b.pause()); }
     });
   }
   // tracejado sai da ponta da bala, como o da skin
   fireTicks(el, delay) { return el.animate([{ clipPath: 'inset(-2px 100% -2px -2px)' }, { clipPath: 'inset(-2px -2px -2px -2px)' }], { duration: 650, delay, easing: EASE, fill: 'backwards' }); }
+  // traçante cruza a borda da seção; a bala da etiqueta chega voando
+  fireRail(el, delay) { return el.animate([{ transform: 'translateX(-100%)' }, { transform: 'translateX(100vw)' }], { duration: 950, delay, easing: 'cubic-bezier(.3,.1,.2,1)' }); }
+  fireTag(tag, delay) {
+    const out = [], round = tag.querySelector('.army-tag-round'), ticks = tag.querySelector('.army-tag-ticks'), sec = tag.closest('section'), rail = sec && sec.querySelector('.army-fx-rail i');
+    if (rail) out.push(this.fireRail(rail, delay));
+    if (round) out.push(round.animate([{ transform: 'translateX(-120px)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 480, delay, easing: EASE, fill: 'backwards' }));
+    if (ticks) out.push(this.fireTicks(ticks, delay + 220));
+    return out;
+  }
   animIn() {
     this._shown = true;
     const root = this.rootRef.current; if (!root || this.reduced) return;
     root.querySelectorAll('[data-line]').forEach((l, k) => l.animate([{ transform: 'translateY(110%)' }, { transform: 'none' }], { duration: 1000, delay: 80 + k * 110, easing: EASE, fill: 'backwards' }));
     root.querySelectorAll('[data-in]').forEach((el, i) => el.animate([{ opacity: 0, transform: 'translateY(22px)' }, { opacity: 1, transform: 'none' }], { duration: 800, delay: 200 + i * 90, easing: EASE, fill: 'backwards' }));
     root.querySelectorAll('[data-num]').forEach((n, i) => n.animate([{ transform: 'translateY(-105%)' }, { transform: 'none' }], { duration: 900, delay: 420 + i * 110, easing: EASE, fill: 'backwards' }));
-    root.querySelectorAll('[data-in] .army-tag-ticks').forEach((t) => this.fireTicks(t, 520));
+    root.querySelectorAll('.army-tag[data-in]').forEach((t) => this.fireTag(t, 420));
+    const hr = root.querySelector('header .army-fx-rail i');
+    if (hr && !this._railIn) { this._railIn = true; this.fireRail(hr, 260); }
     const art = root.querySelector('[data-art]');
     if (art && !this._artIn) { this._artIn = true; art.animate([{ opacity: 0, transform: 'translateX(40px)' }, { opacity: 1, transform: 'none' }], { duration: 1200, delay: 150, easing: EASE, fill: 'backwards' }); }
     if (this.dotRef.current && !this._dotA) this._dotA = this.dotRef.current.animate([{ opacity: 1 }, { opacity: 0.35 }, { opacity: 1 }], { duration: 1400, iterations: Infinity });
@@ -331,6 +480,68 @@ class Component extends DCLogic {
     setTimeout(() => URL.revokeObjectURL(href), 1500);
   };
 
+  // ---------- efeitos ----------
+  setupFx() {
+    const root = this.rootRef.current; if (!root || this.reduced) return;
+    this.bar = root.querySelector('[data-progress]'); this.art = root.querySelector('.army-fx-art');
+    window.addEventListener('click', this.onImpact); window.addEventListener('scroll', this.onScroll, { passive: true }); window.addEventListener('resize', this.onResize, { passive: true });
+    this.onScroll(); this.setupEmbers();
+  }
+  stopFx() {
+    cancelAnimationFrame(this.eraf);
+    window.removeEventListener('click', this.onImpact); window.removeEventListener('scroll', this.onScroll); window.removeEventListener('resize', this.onResize);
+  }
+  onScroll = () => {
+    if (this.sq) return; this.sq = true;
+    requestAnimationFrame(() => {
+      this.sq = false; if (!this.bar) return;
+      const max = document.documentElement.scrollHeight - window.innerHeight, p = max > 0 ? Math.min(1, window.scrollY / max) : 0;
+      this.bar.style.transform = 'translateX(' + ((p - 1) * 100).toFixed(2) + '%)';
+    });
+  };
+  onResize = () => { this.onScroll(); this.sizeEmbers(); this.paintEmbers(); };
+  // sem mouse o cartão gira no toque
+  flipSkin = (e) => { if (window.matchMedia && window.matchMedia('(hover: none)').matches) e.currentTarget.classList.toggle('is-flipped'); };
+  // clique = tiro: furo que some e faíscas
+  onImpact = (e) => {
+    if (!e.detail) return;
+    const hit = document.createElement('div'); hit.className = 'army-fx-hit'; hit.setAttribute('aria-hidden', 'true');
+    hit.style.left = e.clientX + 'px'; hit.style.top = e.clientY + 'px';
+    const hole = document.createElement('b'); hit.appendChild(hole);
+    for (let k = 0; k < 6; k++) {
+      const sp = document.createElement('i'), a = k * 60 + Math.random() * 40; hit.appendChild(sp);
+      sp.animate([{ transform: 'rotate(' + a + 'deg) translateY(-6px)', opacity: 1 }, { transform: 'rotate(' + a + 'deg) translateY(-' + (26 + Math.random() * 18).toFixed(0) + 'px) scaleY(.2)', opacity: 0 }], { duration: 360, easing: 'ease-out', fill: 'forwards' });
+    }
+    document.body.appendChild(hit);
+    hole.animate([{ opacity: 1 }, { opacity: 1, offset: 0.6 }, { opacity: 0 }], { duration: 1400, fill: 'forwards' }).onfinish = () => hit.remove();
+  };
+  // faíscas verdes da skin subindo pela página
+  sizeEmbers() { const c = this.ember; if (c) { c.width = window.innerWidth; c.height = window.innerHeight; } }
+  paintEmbers() { if (this.ember) this.ember.getContext('2d').fillStyle = getComputedStyle(this.rootRef.current).getPropertyValue('--color-accent').trim() || '#9cf74b'; }
+  spark(any) {
+    const c = this.ember;
+    return { x: Math.random() * c.width, y: any ? Math.random() * c.height : c.height + 8, s: 1 + Math.random() * 1.6, vy: 0.25 + Math.random() * 0.6, vx: (Math.random() - 0.5) * 0.4, a: 0.2 + Math.random() * 0.5, p: Math.random() * 6.28 };
+  }
+  setupEmbers() {
+    const c = this.rootRef.current.querySelector('[data-embers]'), ctx = c && c.getContext('2d'); if (!ctx) return;
+    this.ember = c; this.sizeEmbers(); this.paintEmbers();
+    const n = window.innerWidth < 700 ? 12 : 30, list = []; for (let i = 0; i < n; i++) list.push(this.spark(true));
+    let last = 0;
+    const loop = (t) => {
+      if (!this._alive) return;
+      this.eraf = requestAnimationFrame(loop);
+      if (t - last < 33) return; last = t;
+      ctx.clearRect(0, 0, c.width, c.height);
+      list.forEach((e, i) => {
+        e.y -= e.vy; e.x += e.vx + Math.sin(t / 900 + e.p) * 0.2;
+        if (e.y < -8) list[i] = this.spark(false);
+        ctx.globalAlpha = e.a * (0.6 + 0.4 * Math.sin(t / 240 + e.p));
+        ctx.fillRect(e.x, e.y, e.s, e.s * 1.6);
+      });
+    };
+    this.eraf = requestAnimationFrame(loop);
+  }
+
   // ---------- mira ----------
   setupCursor() {
     const on = (this.props.tacticalCursor ?? true) && this.fine && !this.reduced, de = document.documentElement;
@@ -345,6 +556,7 @@ class Component extends DCLogic {
     if (!this.cursorOn) return;
     if (!this.seen) { this.seen = true; this.rx = this.mx; this.ry = this.my; }
     const r = this.reticleRef.current; if (r && r.style.opacity !== '1') r.style.opacity = '1';
+    if (this.art && window.scrollY < window.innerHeight) { this.art.style.setProperty('--px', ((0.5 - this.mx / window.innerWidth) * 18).toFixed(1) + 'px'); this.art.style.setProperty('--py', ((0.5 - this.my / window.innerHeight) * 12).toFixed(1) + 'px'); }
     this.kick();
   };
   onLeave = () => { const r = this.reticleRef.current; if (r) r.style.opacity = '0'; };
@@ -389,7 +601,7 @@ class Component extends DCLogic {
       lDias: pl(d, 'Dia', 'Dias'), lHoras: pl(h, 'Hora', 'Horas'), lMin: pl(m, 'Minuto', 'Minutos'),
       ariaTempo: 'Faltam ' + d + pl(d, ' dia, ', ' dias, ') + h + pl(h, ' hora e ', ' horas e ') + m + pl(m, ' minuto', ' minutos'),
       dataTxt: fmtData(T), headStatus: live ? 'Servidor no ar' : 'Em breve no FiveM',
-      discordUrl: this.discord(), betaUrl: LOGIN_URL || this.discord(), addCal: this.addCal,
+      discordUrl: this.discord(), betaUrl: LOGIN_URL || this.discord(), addCal: this.addCal, flipSkin: this.flipSkin,
     };
   }
 }
