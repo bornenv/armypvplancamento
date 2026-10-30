@@ -8,6 +8,7 @@ COMO TROCAR A DATA
 Abra o index.html, procure "EDITE AQUI" e altere:
   const LANCAMENTO = '2026-12-10 20:00';   -> data e hora no horário de Brasília (AAAA-MM-DD HH:MM)
   const DISCORD = 'https://discord.gg/armypvp'; -> convite do Discord
+  const TRAILER = 'assets/trailer.mp4'; -> vídeo do botão "Ver trailer" (troque o arquivo em assets/)
   const LOGIN_URL = '';  -> link do botão "Garantir tag Beta" (coloque o endereço da página de login do site)
 
 Quando a data chegar, a página troca sozinha para "No ar." com o botão "Jogar agora".
