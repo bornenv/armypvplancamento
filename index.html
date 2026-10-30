@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Lançamento — ARMY PVP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="ARMY PVP: battle royale de end-game no FiveM. Veja quanto falta para o lançamento.">
+<meta name="theme-color" content="#0e0f11">
+<meta property="og:title" content="ARMY PVP — Lançamento">
+<meta property="og:description" content="Battle royale de end-game no FiveM. Um tiro, uma morte. Veja quanto falta para o lançamento.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&amp;display=swap">
+<link rel="stylesheet" href="_ds/modernist-820542e9-990b-4910-8946-2568700e64b8/styles.css">
+<script src="_ds/modernist-820542e9-990b-4910-8946-2568700e64b8/_ds_bundle.js"></script>
+<style>
+html:root{--color-bg:#0e0f11;--color-surface:#16171a;--color-text:#f3f4f6;--color-accent:#9cf74b;--color-accent-2:#9cf74b;--color-divider:color-mix(in srgb,#f3f4f6 22%,transparent);
+--color-neutral-100:#f3f4f6;--color-neutral-200:#dfe1e4;--color-neutral-300:#c2c5ca;--color-neutral-400:#9a9ea5;--color-neutral-500:#74787f;--color-neutral-600:#53565c;--color-neutral-700:#393b40;--color-neutral-800:#25272b;--color-neutral-900:#1a1b1f;
+--color-accent-100:#f3fde9;--color-accent-200:#e2fbc8;--color-accent-300:#c9f89a;--color-accent-400:#b3f772;--color-accent-500:#9cf74b;--color-accent-600:#82d834;--color-accent-700:#63a827;--color-accent-800:#44731d;--color-accent-900:#283f14;
+--color-accent-2-100:#f3fde9;--color-accent-2-200:#e2fbc8;--color-accent-2-300:#c9f89a;--color-accent-2-400:#b3f772;--color-accent-2-500:#9cf74b;--color-accent-2-600:#82d834;--color-accent-2-700:#63a827;--color-accent-2-800:#44731d;--color-accent-2-900:#283f14;
+--shadow-sm:0 0 0 1px color-mix(in srgb,#f3f4f6 8%,transparent);--shadow-md:0 0 0 1px color-mix(in srgb,#f3f4f6 10%,transparent),0 8px 24px rgba(0,0,0,.45);--shadow-lg:0 0 0 1px color-mix(in srgb,#f3f4f6 12%,transparent),0 18px 48px rgba(0,0,0,.6)}
+html{scrollbar-color:#9cf74b #0e0f11;background:#0e0f11}
+body{margin:0;background:#0e0f11;color:#f3f4f6;overflow-x:hidden;-webkit-font-smoothing:antialiased;transition:opacity .2s ease-out}
+a{color:#9cf74b}
+a:hover{color:#b3f772}
+html:not(.army-ok) body{opacity:0;animation:army-in 0s linear 1.8s forwards}
+@keyframes army-in{to{opacity:1}}
+.army-tag{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;font-family:var(--font-heading);text-transform:uppercase}
+.army-tag-round{flex:none;width:72px;height:14px;background:linear-gradient(90deg,transparent,var(--color-accent) 40%);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 14'%3E%3Cpath d='M8 3 30 2.2v1.6zM0 7l30-1v2zM12 11l18-.8v1.6z'/%3E%3Cpath d='M32 2h14v10H32zM48 2h9c6 0 11 3 15 5-4 2-9 5-15 5h-9z'/%3E%3C/svg%3E") center/100% 100% no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 72 14'%3E%3Cpath d='M8 3 30 2.2v1.6zM0 7l30-1v2zM12 11l18-.8v1.6z'/%3E%3Cpath d='M32 2h14v10H32zM48 2h9c6 0 11 3 15 5-4 2-9 5-15 5h-9z'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+.army-tag-label{font-stretch:62%;font-weight:900;font-size:clamp(25px,2vw,30px);line-height:1;letter-spacing:.02em;color:var(--color-accent);white-space:nowrap}
+.army-tag--sm{flex:none;flex-wrap:nowrap;gap:10px}
+.army-tag--sm .army-tag-round{transform:scale(.72);transform-origin:0 50%;margin-right:-20px}
+.army-tag--sm .army-tag-label{font-size:17px;letter-spacing:.04em;color:var(--color-neutral-100)}
+.army-tag-ticks{flex:1 1 90px;min-width:90px;height:4px;transform:skewX(-35deg);background:repeating-linear-gradient(90deg,var(--color-accent) 0 14px,transparent 14px 22px) 0 0/66px 100% no-repeat,linear-gradient(var(--color-neutral-700),var(--color-neutral-700)) 66px 0 no-repeat}
+.army-tag-meta{margin-left:auto;font-stretch:125%;font-weight:800;font-size:11px;letter-spacing:.18em;color:var(--color-neutral-400)}
+@media (max-width:560px){.army-tag-meta{flex-basis:100%;margin-left:0}}
+@media (max-width:389px){.army-tag--sm{display:none}}
+</style>
+</helmet>
+<div ref="{{ rootRef }}" style="position:relative;min-height:100svh;display:flex;flex-direction:column;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);overflow:clip">
+
+<div aria-hidden="true" style="position:fixed;top:0;bottom:0;left:50%;transform:translateX(-50%);width:min(1440px,100%);padding:0 clamp(20px,4vw,56px);box-sizing:border-box;pointer-events:none;z-index:0;will-change:transform">
+<div style="height:100%;border-right:1px solid color-mix(in srgb,var(--color-text) 5%,transparent);background:repeating-linear-gradient(90deg,color-mix(in srgb,var(--color-text) 5%,transparent) 0 1px,transparent 1px 8.3333%)"></div>
+</div>
+
+<div style="position:relative;min-height:calc(100svh - 56px);display:flex;flex-direction:column">
+<div data-art="" aria-hidden="true" style="position:absolute;top:70px;right:0;bottom:0;width:min(100%,max(min(50%,780px),calc((960px - 100vw) * 999)));z-index:0;pointer-events:none;overflow:hidden">
+<img src="assets/hero-operador.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 16%;display:block">
+<div style="position:absolute;inset:0;background:linear-gradient(90deg,var(--color-bg) 0%,transparent 42%),linear-gradient(0deg,var(--color-bg) 0%,transparent 24%)"></div>
+<div style="position:absolute;top:0;left:0;bottom:0;width:min(100%,max(0px,calc((960px - 100vw) * 999)));background:color-mix(in srgb,var(--color-bg) 74%,transparent)"></div>
+<div style="position:absolute;inset:0;background:repeating-linear-gradient(0deg,color-mix(in srgb,var(--color-bg) 30%,transparent) 0 1px,transparent 1px 4px)"></div>
+</div>
+
+<header style="position:relative;z-index:2;background:var(--color-bg);border-bottom:2px solid var(--color-divider)">
+<div style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,56px);height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+<img src="assets/army-logo-alpha.png" alt="ARMY PVP" style="height:24px;width:auto;display:block">
+<span class="army-tag army-tag--sm"><span ref="{{ dotRef }}" class="army-tag-round"></span><span class="army-tag-label">{{ headStatus }}</span></span>
+</div>
+</header>
+
+<main style="position:relative;z-index:1;flex:1;display:flex">
+<div style="width:100%;max-width:1440px;margin:0 auto;box-sizing:border-box;padding:clamp(32px,5vh,64px) clamp(20px,4vw,56px);display:flex;flex-direction:column;justify-content:center">
+<div style="width:100%;max-width:max(min(860px,54vw),calc((960px - 100vw) * 999))">
+
+<sc-if value="{{ pre }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;flex-direction:column;gap:clamp(20px,3.2vh,36px)">
+<div data-in="" class="army-tag">
+<span class="army-tag-round"></span><span class="army-tag-label">Lançamento</span><span class="army-tag-ticks"></span><span class="army-tag-meta">Horário de Brasília</span>
+</div>
+<h1 style="margin:0;font-family:var(--font-heading);font-stretch:62%;font-weight:900;font-size:clamp(56px,min(9vw,15vh),148px);line-height:.84;text-transform:uppercase;color:var(--color-accent)"><span style="display:block;overflow:hidden;padding:.12em 0 .03em;margin-top:-.12em"><span data-line="" style="display:block">Faltam</span></span></h1>
+<div data-in="" style="position:relative">
+<div role="timer" aria-label="{{ ariaTempo }}" style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--color-divider);border:2px solid var(--color-divider)">
+<div style="background:var(--color-bg);padding:clamp(16px,2.2vw,28px) clamp(14px,1.8vw,26px) clamp(14px,1.6vw,22px);display:flex;flex-direction:column;gap:clamp(10px,1.6vh,18px);min-width:0">
+<span style="display:block;overflow:hidden;padding-top:.08em;margin-top:-.08em"><span data-num="d" style="display:block;font-family:var(--font-heading);font-stretch:62%;font-weight:900;font-size:clamp(64px,min(13vw,22vh),208px);line-height:.8;font-variant-numeric:tabular-nums">{{ dias }}</span></span>
+<span style="font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-neutral-300)">{{ lDias }}</span>
+</div>
+<div style="background:var(--color-bg);padding:clamp(16px,2.2vw,28px) clamp(14px,1.8vw,26px) clamp(14px,1.6vw,22px);display:flex;flex-direction:column;gap:clamp(10px,1.6vh,18px);min-width:0">
+<span style="display:block;overflow:hidden;padding-top:.08em;margin-top:-.08em"><span data-num="h" style="display:block;font-family:var(--font-heading);font-stretch:62%;font-weight:900;font-size:clamp(64px,min(13vw,22vh),208px);line-height:.8;font-variant-numeric:tabular-nums">{{ horas }}</span></span>
+<span style="font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-neutral-300)">{{ lHoras }}</span>
+</div>
+<div style="background:var(--color-bg);padding:clamp(16px,2.2vw,28px) clamp(14px,1.8vw,26px) clamp(14px,1.6vw,22px);display:flex;flex-direction:column;gap:clamp(10px,1.6vh,18px);min-width:0">
+<span style="display:block;overflow:hidden;padding-top:.08em;margin-top:-.08em"><span data-num="m" style="display:block;font-family:var(--font-heading);font-stretch:62%;font-weight:900;font-size:clamp(64px,min(13vw,22vh),208px);line-height:.8;font-variant-numeric:tabular-nums">{{ minutos }}</span></span>
+<span style="font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--color-neutral-300)">{{ lMin }}</span>
+</div>
+</div>
+<div aria-hidden="true" style="position:absolute;left:0;right:0;bottom:0;height:2px;clip-path:inset(-4px 0 -4px 0);pointer-events:none">
+<div ref="{{ runRef }}" style="position:absolute;inset:0;transform:translateX(-100%);will-change:transform">
+<span style="position:absolute;left:0;right:12px;top:0;height:2px;background:var(--color-accent)"></span>
+<span style="position:absolute;right:0;top:-2px;width:16px;height:6px;background:var(--color-accent);clip-path:polygon(0 0,62% 0,100% 50%,62% 100%,0 100%)"></span>
+</div>
+</div>
+</div>
+<div data-in="" style="font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:clamp(13px,1vw,15px);letter-spacing:.16em;line-height:1.5;text-transform:uppercase">{{ dataTxt }}</div>
+<div data-in="" style="display:flex;flex-direction:column;gap:20px">
+<p style="margin:0;max-width:520px;font-size:clamp(16px,1.25vw,19px);line-height:1.55;color:var(--color-neutral-300);text-wrap:pretty">Battle royale de end-game no FiveM. Um tiro, uma morte. Entre no Discord e chegue pronto no dia.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<a href="{{ discordUrl }}" target="_blank" rel="noopener" class="btn btn-primary" style="height:60px;min-width:260px;padding:0 20px;justify-content:space-between;gap:36px;text-decoration:none;color:var(--color-bg);font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:14px;letter-spacing:.12em;text-transform:uppercase" style-hover="background:var(--color-accent-400);color:var(--color-bg)"><span>Entrar no Discord</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+<button onClick="{{ addCal }}" class="btn btn-secondary" style="height:60px;padding:0 20px;justify-content:space-between;gap:28px;border-width:2px;color:var(--color-text);font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase"><span>Lembrete na agenda</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="square"><path d="M8 2v4"></path><path d="M16 2v4"></path><path d="M21 13V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8"></path><path d="M3 10h18"></path><path d="M16 19h6"></path><path d="M19 16v6"></path></svg></button>
+</div>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 24px;font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:11px;letter-spacing:.18em;text-transform:uppercase">
+<span style="color:var(--color-neutral-500)">Siga</span>
+<a href="https://www.tiktok.com/@_armypvp_" target="_blank" rel="noopener" style="color:var(--color-neutral-200);text-decoration:none;transition:color .2s" style-hover="color:var(--color-accent)">TikTok <span style="text-transform:none">@_armypvp_</span></a>
+<a href="https://x.com/armypvp_" target="_blank" rel="noopener" style="color:var(--color-neutral-200);text-decoration:none;transition:color .2s" style-hover="color:var(--color-accent)">X <span style="text-transform:none">@armypvp_</span></a>
+<a href="{{ discordUrl }}" target="_blank" rel="noopener" style="color:var(--color-neutral-200);text-decoration:none;transition:color .2s" style-hover="color:var(--color-accent)">Discord <span style="text-transform:none">/armypvp</span></a>
+</div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ post }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:clamp(20px,3.2vh,36px)">
+<div data-in="" class="army-tag">
+<span class="army-tag-round"></span><span class="army-tag-label">Servidor no ar</span><span class="army-tag-ticks"></span><span class="army-tag-meta">Battle royale · FiveM</span>
+</div>
+<h1 style="margin:0;font-family:var(--font-heading);font-stretch:62%;font-weight:900;font-size:clamp(80px,min(15vw,26vh),260px);line-height:.84;text-transform:uppercase;color:var(--color-accent)"><span style="display:block;overflow:hidden;padding:.12em 0 .03em;margin-top:-.12em"><span data-line="" style="display:block">No ar.</span></span></h1>
+<div data-in="" style="display:flex;flex-direction:column;gap:20px">
+<p style="margin:0;max-width:520px;font-size:clamp(16px,1.25vw,19px);line-height:1.55;color:var(--color-neutral-300);text-wrap:pretty">O ARMY PvP abriu. Battle royale de end-game no FiveM: um tiro, uma morte. Entre no Discord e jogue.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px">
+<a href="{{ discordUrl }}" target="_blank" rel="noopener" class="btn btn-primary" style="height:60px;min-width:260px;padding:0 20px;justify-content:space-between;gap:36px;text-decoration:none;color:var(--color-bg);font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:14px;letter-spacing:.12em;text-transform:uppercase" style-hover="background:var(--color-accent-400);color:var(--color-bg)"><span>Jogar agora</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></a>
+</div>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 24px;font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:11px;letter-spacing:.18em;text-transform:uppercase">
+<span style="color:var(--color-neutral-500)">Siga</span>
+<a href="https://www.tiktok.com/@_armypvp_" target="_blank" rel="noopener" style="color:var(--color-neutral-200);text-decoration:none;transition:color .2s" style-hover="color:var(--color-accent)">TikTok <span style="text-transform:none">@_armypvp_</span></a>
+<a href="https://x.com/armypvp_" target="_blank" rel="noopener" style="color:var(--color-neutral-200);text-decoration:none;transition:color .2s" style-hover="color:var(--color-accent)">X <span style="text-transform:none">@armypvp_</span></a>
+<a href="{{ discordUrl }}" target="_blank" rel="noopener" style="color:var(--color-neutral-200);text-decoration:none;transition:color .2s" style-hover="color:var(--color-accent)">Discord <span style="text-transform:none">/armypvp</span></a>
+</div>
+</div>
+</div>
+</sc-if>
+
+</div>
+</div>
+</main>
+</div>
+
+<section id="beta" style="position:relative;z-index:1;border-top:2px solid var(--color-divider);background:var(--color-bg)">
+<div style="max-width:1440px;margin:0 auto;padding:clamp(18px,2.4vw,24px) clamp(20px,4vw,56px) clamp(64px,8vw,112px)">
+<div data-rv="0" class="army-tag">
+<span class="army-tag-round"></span><span class="army-tag-label">Recompensa beta</span><span class="army-tag-ticks"></span><span class="army-tag-meta">Glock Rajada</span>
+</div>
+<div style="margin-top:clamp(32px,4vw,56px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:clamp(28px,4vw,64px);align-items:center">
+<figure data-rv="1" style="margin:0;position:relative;border:2px solid var(--color-divider);background:var(--color-bg);aspect-ratio:1536/1024;overflow:hidden">
+<img src="assets/skin-beta.webp" alt="Skin ARMY da Pistola AP e da Five-Seven" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+<span style="position:absolute;top:14px;left:14px;width:22px;height:22px;border-top:2px solid var(--color-accent);border-left:2px solid var(--color-accent)"></span><span style="position:absolute;top:14px;right:14px;width:22px;height:22px;border-top:2px solid var(--color-accent);border-right:2px solid var(--color-accent)"></span><span style="position:absolute;bottom:14px;left:14px;width:22px;height:22px;border-bottom:2px solid var(--color-accent);border-left:2px solid var(--color-accent)"></span><span style="position:absolute;bottom:14px;right:14px;width:22px;height:22px;border-bottom:2px solid var(--color-accent);border-right:2px solid var(--color-accent)"></span>
+</figure>
+<div data-rv="2" style="display:flex;flex-direction:column;gap:24px;min-width:0">
+<h2 style="margin:0;font-family:var(--font-heading);font-stretch:62%;font-weight:900;font-size:clamp(52px,6vw,104px);line-height:.86;text-transform:uppercase">Ganhe a<br><span style="color:var(--color-accent)">skin ARMY.</span></h2>
+<p style="margin:0;max-width:520px;font-size:clamp(16px,1.25vw,19px);line-height:1.55;color:var(--color-neutral-300);text-wrap:pretty">Faça login com o Discord e garanta a tag Beta. A skin ARMY da Pistola AP e da Five-Seven fica liberada na sua conta.</p>
+<div style="display:flex;flex-direction:column;border-top:2px solid var(--color-divider)">
+<div style="display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--color-divider)"><span style="font-family:var(--font-heading);font-stretch:62%;font-weight:900;font-size:26px;line-height:1;color:var(--color-accent)">01</span><span style="font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase">Entre com o Discord</span></div>
+<div style="display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--color-divider)"><span style="font-family:var(--font-heading);font-stretch:62%;font-weight:900;font-size:26px;line-height:1;color:var(--color-accent)">02</span><span style="font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase">Garanta a tag Beta</span></div>
+<div style="display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:center;padding:14px 0;border-bottom:1px solid var(--color-divider)"><span style="font-family:var(--font-heading);font-stretch:62%;font-weight:900;font-size:26px;line-height:1;color:var(--color-accent)">03</span><span style="font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:13px;letter-spacing:.12em;text-transform:uppercase">Skin liberada na sua conta</span></div>
+</div>
+<a href="{{ betaUrl }}" target="_blank" rel="noopener" class="btn btn-primary" style="align-self:flex-start;height:60px;min-width:260px;padding:0 20px;justify-content:space-between;gap:36px;text-decoration:none;color:var(--color-bg);font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:14px;letter-spacing:.12em;text-transform:uppercase" style-hover="background:var(--color-accent-400);color:var(--color-bg)"><span>Garantir tag Beta</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+</div>
+</div>
+</div>
+</section>
+
+<footer style="position:relative;z-index:1;border-top:2px solid var(--color-divider);background:var(--color-bg)">
+<div style="max-width:1440px;margin:0 auto;padding:16px clamp(20px,4vw,56px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px;font-size:13px;line-height:1.5;color:var(--color-neutral-400)">
+<span>© 2026 ARMY PVP. Servidor independente de FiveM — não afiliado à Rockstar Games, Take-Two Interactive ou Cfx.re.</span>
+<span style="display:flex;align-items:center;gap:12px"><span style="font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:10px;letter-spacing:.2em;text-transform:uppercase">Não recomendado para menores de 18 anos</span><span role="img" aria-label="18 anos" style="width:34px;height:34px;flex:none;background:#000;border:1px solid var(--color-divider);display:flex;align-items:center;justify-content:center;font-family:var(--font-heading);font-stretch:62%;font-weight:900;font-size:22px;line-height:1;color:#fff">18</span></span>
+</div>
+</footer>
+
+<div ref="{{ reticleRef }}" aria-hidden="true" style="position:fixed;left:0;top:0;z-index:300;pointer-events:none;opacity:0;will-change:transform">
+<div data-recoil="" style="position:absolute;left:0;top:0">
+<div data-ring="" style="position:absolute;left:-17px;top:-17px;width:34px;height:34px;color:var(--color-text);filter:drop-shadow(0 0 1px var(--color-bg));transition:transform .22s cubic-bezier(.2,.8,.2,1),color .2s">
+<span style="position:absolute;left:0;top:0;width:9px;height:9px;border-left:2px solid currentColor;border-top:2px solid currentColor"></span>
+<span style="position:absolute;right:0;top:0;width:9px;height:9px;border-right:2px solid currentColor;border-top:2px solid currentColor"></span>
+<span style="position:absolute;left:0;bottom:0;width:9px;height:9px;border-left:2px solid currentColor;border-bottom:2px solid currentColor"></span>
+<span style="position:absolute;right:0;bottom:0;width:9px;height:9px;border-right:2px solid currentColor;border-bottom:2px solid currentColor"></span>
+</div>
+<span style="position:absolute;left:-2px;top:-2px;width:4px;height:4px;background:var(--color-accent)"></span>
+<div data-hit="" style="position:absolute;left:0;top:0;opacity:0">
+<span style="position:absolute;left:-5px;top:-1px;width:10px;height:2px;background:var(--color-text);transform:rotate(45deg) translateX(-11px)"></span>
+<span style="position:absolute;left:-5px;top:-1px;width:10px;height:2px;background:var(--color-text);transform:rotate(135deg) translateX(-11px)"></span>
+<span style="position:absolute;left:-5px;top:-1px;width:10px;height:2px;background:var(--color-text);transform:rotate(225deg) translateX(-11px)"></span>
+<span style="position:absolute;left:-5px;top:-1px;width:10px;height:2px;background:var(--color-text);transform:rotate(315deg) translateX(-11px)"></span>
+</div>
+</div>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;dataLancamento&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;2026-12-10 20:00&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Lançamento&quot;},&quot;simularLancamento&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Lançamento&quot;},&quot;discordUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://discord.gg/armypvp&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Links&quot;},&quot;tacticalCursor&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Experiência&quot;}}">
+// ====== EDITE AQUI ======
+const LANCAMENTO = '2026-12-10 20:00';           // data e hora do lançamento, horário de Brasília (AAAA-MM-DD HH:MM)
+const DISCORD = 'https://discord.gg/armypvp';  // convite do Discord
+const LOGIN_URL = '';  // link do botão "Garantir tag Beta" (página de login do site). Vazio = Discord
+// ========================
+const EASE = 'cubic-bezier(.2,.75,.1,1)';
+const TZ = 'America/Sao_Paulo';
+const pad2 = (n) => String(n).padStart(2, '0');
+
+function parseData(v) {
+  const s = String(v || '').trim().replace(' ', 'T');
+  const m = s.match(/^(\d{4})-(\d{2})-(\d{2})(?:T(\d{1,2}):(\d{2}))?/);
+  if (!m) return NaN;
+  if (/(?:[zZ]|[+-]\d{2}:?\d{2})$/.test(s.slice(10))) return Date.parse(s);
+  return Date.UTC(+m[1], +m[2] - 1, +m[3], (+m[4] || 0) + 3, +m[5] || 0); // Brasília = UTC−3
+}
+function fmtData(ts) {
+  try {
+    const p = {};
+    new Intl.DateTimeFormat('pt-BR', { timeZone: TZ, weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' })
+      .formatToParts(new Date(ts)).forEach((x) => { p[x.type] = x.value; });
+    return p.weekday + ' · ' + p.day + ' de ' + p.month + ' de ' + p.year + ' · ' + p.hour + 'h' + (p.minute !== '00' ? p.minute : '');
+  } catch (e) { return new Date(ts).toLocaleString('pt-BR'); }
+}
+function armyShow() { document.documentElement.classList.add('army-ok'); }
+// espera estilos e a fonte Archivo antes de mostrar (sem piscar nem trocar de fonte)
+function armyAssets() {
+  const t0 = Date.now();
+  const sheets = new Promise((res) => {
+    const wait = () => {
+      const ls = document.querySelectorAll('link[rel="stylesheet"]');
+      for (let i = 0; i < ls.length; i++) if (!ls[i].sheet && Date.now() - t0 < 1400) { setTimeout(wait, 20); return; }
+      res();
+    };
+    wait();
+  });
+  const fonts = () => { const f = document.fonts; if (!f || !f.load) return null; return Promise.all(['900 extra-condensed 64px Archivo', '800 expanded 12px Archivo', '400 16px Archivo'].map((x) => f.load(x).catch(() => null))); };
+  return Promise.race([sheets.then(fonts), new Promise((r) => setTimeout(r, 1500))]).catch(() => null);
+}
+
+class Component extends DCLogic {
+  state = { tm: null, live: false };
+  rootRef = React.createRef(); runRef = React.createRef(); dotRef = React.createRef(); reticleRef = React.createRef();
+
+  target() { const t = parseData(this.props.dataLancamento || LANCAMENTO); return isNaN(t) ? parseData(LANCAMENTO) : t; }
+  discord() { return String(this.props.discordUrl || '').trim() || DISCORD; }
+  sig() { return String(this.props.dataLancamento || '') + '|' + !!this.props.simularLancamento; }
+
+  componentDidMount() {
+    this._alive = true; this._ps = this.state; this._sig = this.sig(); this._tc = this.props.tacticalCursor;
+    const mm = (q) => (window.matchMedia ? window.matchMedia(q).matches : false);
+    this.reduced = mm('(prefers-reduced-motion: reduce)'); this.fine = mm('(pointer: fine)');
+    window.addEventListener('mousemove', this.onMouse, { passive: true }); window.addEventListener('mousedown', this.onDown);
+    document.addEventListener('mouseover', this.onOver); document.documentElement.addEventListener('mouseleave', this.onLeave);
+    document.addEventListener('visibilitychange', this.onVis);
+    this.setupCursor(); this.tick(); this.setupReveals();
+    armyAssets().then(() => { if (this._alive) requestAnimationFrame(() => { armyShow(); this.animIn(); }); });
+  }
+  componentWillUnmount() {
+    this._alive = false; clearTimeout(this.t); cancelAnimationFrame(this.raf); if (this.io) this.io.disconnect();
+    window.removeEventListener('mousemove', this.onMouse); window.removeEventListener('mousedown', this.onDown);
+    document.removeEventListener('mouseover', this.onOver); document.documentElement.removeEventListener('mouseleave', this.onLeave);
+    document.removeEventListener('visibilitychange', this.onVis);
+    document.documentElement.classList.remove('army-aim'); if (this.cursorStyle) this.cursorStyle.remove();
+  }
+  componentDidUpdate() {
+    const ps = this._ps || this.state, s = this.state; this._ps = s;
+    if (this._tc !== this.props.tacticalCursor) { this._tc = this.props.tacticalCursor; this.setupCursor(); }
+    const sig = this.sig(); if (sig !== this._sig) { this._sig = sig; this._ran = false; clearTimeout(this.t); this.tick(); }
+    if (ps.tm != null && s.tm != null && ps.tm !== s.tm && !s.live) this.flipCells(ps.tm, s.tm);
+    if (ps.live !== s.live && this._shown) { this._ran = false; this.animIn(); }
+  }
+  onVis = () => { if (document.visibilityState === 'visible' && this._alive) { this._ran = false; clearTimeout(this.t); this.tick(); } };
+
+  // contagem: atualiza os números a cada minuto; a bala atravessa a borda do placar a cada minuto
+  tick = () => {
+    if (!this._alive) return;
+    const now = Date.now(), T = this.target(), live = !!this.props.simularLancamento || now >= T;
+    const diff = T - now, tm = live ? 0 : Math.max(1, Math.ceil(diff / 60000));
+    if (tm !== this.state.tm || live !== this.state.live) this.setState({ tm, live });
+    if (live) return;
+    const next = Math.max(40, (diff % 1000) + 20), run = this.runRef.current;
+    if (run) {
+      const r = diff - (tm - 1) * 60000, pNow = 1 - r / 60000, pNext = Math.min(1, 1 - (r - next) / 60000);
+      if (!this._ran || pNow < (this._p || 0) - 0.001) { run.style.transition = 'none'; run.style.transform = 'translateX(' + ((pNow - 1) * 100).toFixed(3) + '%)'; void run.offsetWidth; }
+      run.style.transition = 'transform ' + next + 'ms linear';
+      run.style.transform = 'translateX(' + ((pNext - 1) * 100).toFixed(3) + '%)';
+      this._p = pNext; this._ran = true;
+    }
+    this.t = setTimeout(this.tick, next);
+  };
+
+  // seção da recompensa: entra ao rolar
+  setupReveals() {
+    const root = this.rootRef.current; if (!root || this.reduced || !('IntersectionObserver' in window)) return;
+    this.io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting && e.target._rv) { this.io.unobserve(e.target); e.target._rv.play(); if (e.target._tk) e.target._tk.play(); } }), { threshold: 0.12 });
+    root.querySelectorAll('[data-rv]').forEach((el) => {
+      const a = el.animate([{ opacity: 0, transform: 'translateY(32px)' }, { opacity: 1, transform: 'none' }], { duration: 900, delay: +(el.getAttribute('data-rv') || 0) * 110, easing: EASE, fill: 'both' });
+      a.pause(); a.onfinish = () => a.cancel(); el._rv = a; this.io.observe(el);
+      const tk = el.querySelector('.army-tag-ticks');
+      if (tk) { const b = this.fireTicks(tk, 380); b.pause(); el._tk = b; }
+    });
+  }
+  // tracejado sai da ponta da bala, como o da skin
+  fireTicks(el, delay) { return el.animate([{ clipPath: 'inset(-2px 100% -2px -2px)' }, { clipPath: 'inset(-2px -2px -2px -2px)' }], { duration: 650, delay, easing: EASE, fill: 'backwards' }); }
+  animIn() {
+    this._shown = true;
+    const root = this.rootRef.current; if (!root || this.reduced) return;
+    root.querySelectorAll('[data-line]').forEach((l, k) => l.animate([{ transform: 'translateY(110%)' }, { transform: 'none' }], { duration: 1000, delay: 80 + k * 110, easing: EASE, fill: 'backwards' }));
+    root.querySelectorAll('[data-in]').forEach((el, i) => el.animate([{ opacity: 0, transform: 'translateY(22px)' }, { opacity: 1, transform: 'none' }], { duration: 800, delay: 200 + i * 90, easing: EASE, fill: 'backwards' }));
+    root.querySelectorAll('[data-num]').forEach((n, i) => n.animate([{ transform: 'translateY(-105%)' }, { transform: 'none' }], { duration: 900, delay: 420 + i * 110, easing: EASE, fill: 'backwards' }));
+    root.querySelectorAll('[data-in] .army-tag-ticks').forEach((t) => this.fireTicks(t, 520));
+    const art = root.querySelector('[data-art]');
+    if (art && !this._artIn) { this._artIn = true; art.animate([{ opacity: 0, transform: 'translateX(40px)' }, { opacity: 1, transform: 'none' }], { duration: 1200, delay: 150, easing: EASE, fill: 'backwards' }); }
+    if (this.dotRef.current && !this._dotA) this._dotA = this.dotRef.current.animate([{ opacity: 1 }, { opacity: 0.35 }, { opacity: 1 }], { duration: 1400, iterations: Infinity });
+  }
+  flipCells(a, b) {
+    const root = this.rootRef.current; if (!root || this.reduced) return;
+    const split = (t) => [Math.floor(t / 1440), Math.floor((t % 1440) / 60), t % 60], A = split(a), B = split(b);
+    ['d', 'h', 'm'].forEach((k, i) => {
+      if (A[i] === B[i]) return;
+      const n = root.querySelector('[data-num="' + k + '"]');
+      if (n) n.animate([{ transform: 'translateY(-105%)', color: 'var(--color-accent)' }, { transform: 'none', color: 'var(--color-text)' }], { duration: 560, easing: EASE });
+    });
+  }
+
+  addCal = () => {
+    const ts = this.target(), url = this.discord();
+    const f = (t) => new Date(t).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+    const ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//ARMY PVP//Lancamento//PT-BR', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
+      'BEGIN:VEVENT', 'UID:lancamento-' + ts + '@armypvp', 'DTSTAMP:' + f(Date.now()), 'DTSTART:' + f(ts), 'DTEND:' + f(ts + 2 * 3600000),
+      'SUMMARY:Lançamento ARMY PVP', 'DESCRIPTION:O servidor ARMY PVP abre. Entre no Discord: ' + url, 'URL:' + url,
+      'BEGIN:VALARM', 'TRIGGER:-PT30M', 'ACTION:DISPLAY', 'DESCRIPTION:ARMY PVP abre em 30 minutos', 'END:VALARM',
+      'END:VEVENT', 'END:VCALENDAR'].join('\r\n');
+    const href = URL.createObjectURL(new Blob([ics], { type: 'text/calendar;charset=utf-8' }));
+    const a = document.createElement('a'); a.href = href; a.download = 'army-pvp-lancamento.ics';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(href), 1500);
+  };
+
+  // ---------- mira ----------
+  setupCursor() {
+    const on = (this.props.tacticalCursor ?? true) && this.fine && !this.reduced, de = document.documentElement;
+    if (on) {
+      if (!this.cursorStyle) { const st = document.createElement('style'); st.textContent = 'html.army-aim, html.army-aim * { cursor: none !important; }'; document.head.appendChild(st); this.cursorStyle = st; }
+      de.classList.add('army-aim');
+    } else { de.classList.remove('army-aim'); if (this.reticleRef.current) this.reticleRef.current.style.opacity = '0'; }
+    this.cursorOn = on;
+  }
+  onMouse = (e) => {
+    this.mx = e.clientX; this.my = e.clientY;
+    if (!this.cursorOn) return;
+    if (!this.seen) { this.seen = true; this.rx = this.mx; this.ry = this.my; }
+    const r = this.reticleRef.current; if (r && r.style.opacity !== '1') r.style.opacity = '1';
+    this.kick();
+  };
+  onLeave = () => { const r = this.reticleRef.current; if (r) r.style.opacity = '0'; };
+  onOver = (e) => {
+    if (!this.cursorOn) return;
+    const t = e.target && e.target.closest ? e.target.closest('a,button,label,input') : null;
+    const hot = !!t; if (hot === this.hot) return; this.hot = hot;
+    const ring = this.reticleRef.current && this.reticleRef.current.querySelector('[data-ring]'); if (!ring) return;
+    ring.style.transform = hot ? 'scale(1.5) rotate(45deg)' : 'none';
+    ring.style.color = hot ? 'var(--color-accent)' : 'var(--color-text)';
+  };
+  onDown = () => {
+    if (!this.cursorOn) return;
+    const r = this.reticleRef.current; if (!r) return;
+    const hit = r.querySelector('[data-hit]'), rec = r.querySelector('[data-recoil]');
+    if (hit) hit.animate([{ opacity: 1, transform: 'scale(.7)' }, { opacity: 1, transform: 'scale(1.15)', offset: 0.35 }, { opacity: 0, transform: 'scale(1.3)' }], { duration: 320, easing: 'ease-out' });
+    if (rec) rec.animate([{ transform: 'scale(.72)' }, { transform: 'scale(1)' }], { duration: 260, easing: EASE });
+  };
+  kick() { if (!this.rafOn && this._alive) { this.rafOn = true; this.raf = requestAnimationFrame(this.frame); } }
+  frame = () => {
+    this.rafOn = false;
+    if (!this._alive) return;
+    const r = this.reticleRef.current;
+    if (this.cursorOn && r && this.seen) {
+      const dx = this.mx - this.rx, dy = this.my - this.ry, moving = Math.abs(dx) > 0.3 || Math.abs(dy) > 0.3;
+      if (moving) { this.rx += dx * 0.45; this.ry += dy * 0.45; } else { this.rx = this.mx; this.ry = this.my; }
+      r.style.transform = 'translate3d(' + this.rx.toFixed(1) + 'px,' + this.ry.toFixed(1) + 'px,0)';
+      if (moving) this.kick();
+    }
+  };
+
+  renderVals() {
+    const s = this.state, P = this.props, T = this.target();
+    const live = s.live || !!P.simularLancamento;
+    const tm = s.tm != null && s.tm > 0 ? s.tm : Math.max(1, Math.ceil((T - Date.now()) / 60000));
+    const d = Math.floor(tm / 1440), h = Math.floor((tm % 1440) / 60), m = tm % 60;
+    const pl = (n, a, b) => (n === 1 ? a : b);
+    return {
+      rootRef: this.rootRef, runRef: this.runRef, dotRef: this.dotRef, reticleRef: this.reticleRef,
+      pre: !live, post: live,
+      dias: pad2(d), horas: pad2(h), minutos: pad2(m),
+      lDias: pl(d, 'Dia', 'Dias'), lHoras: pl(h, 'Hora', 'Horas'), lMin: pl(m, 'Minuto', 'Minutos'),
+      ariaTempo: 'Faltam ' + d + pl(d, ' dia, ', ' dias, ') + h + pl(h, ' hora e ', ' horas e ') + m + pl(m, ' minuto', ' minutos'),
+      dataTxt: fmtData(T), headStatus: live ? 'Servidor no ar' : 'Em breve no FiveM',
+      discordUrl: this.discord(), betaUrl: LOGIN_URL || this.discord(), addCal: this.addCal,
+    };
+  }
+}
+
+</script>
+</body>
+</html>

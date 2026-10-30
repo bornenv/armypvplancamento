@@ -1,0 +1,13 @@
+ARMY PVP — página de lançamento (site separado)
+
+COMO PUBLICAR
+Envie TODOS os arquivos desta pasta para a raiz do domínio (Vercel, Netlify, Hostinger, Cloudflare Pages etc.).
+O index.html é a página inicial. Mantenha as pastas assets/ e _ds/ e o support.js junto dele.
+
+COMO TROCAR A DATA
+Abra o index.html, procure "EDITE AQUI" e altere:
+  const LANCAMENTO = '2026-12-10 20:00';   -> data e hora no horário de Brasília (AAAA-MM-DD HH:MM)
+  const DISCORD = 'https://discord.gg/armypvp'; -> convite do Discord
+  const LOGIN_URL = '';  -> link do botão "Garantir tag Beta" (coloque o endereço da página de login do site)
+
+Quando a data chegar, a página troca sozinha para "No ar." com o botão "Jogar agora".
