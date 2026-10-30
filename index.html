@@ -127,6 +127,16 @@ a.btn,button.btn{position:relative;overflow:hidden;transition:background-color .
 .army-trailer .army-trailer-close{position:absolute;top:10px;right:10px;z-index:1;background:var(--color-bg);color:var(--color-text)}
 html.army-aim .army-trailer,html.army-aim .army-trailer *{cursor:auto!important}
 html.army-aim .army-trailer button{cursor:pointer!important}
+.army-rec-reward--boost{--color-accent:#ff73fa;border-color:transparent;background:linear-gradient(115deg,#ff73fa,#b377f3,#ff73fa) border-box;background-size:220% 100%;box-shadow:0 0 26px color-mix(in srgb,#ff73fa 20%,transparent);animation:army-boost 6s linear infinite}
+.army-rec-reward--boost .army-rec-value strong span{width:fit-content;background:linear-gradient(90deg,#ff73fa,#b377f3);-webkit-background-clip:text;background-clip:text;color:transparent}
+.army-rec-boost-label{font-family:var(--font-heading);font-stretch:125%;font-weight:800;font-size:11px;letter-spacing:.16em;line-height:1.3;text-transform:uppercase;color:#ff73fa}
+.army-rec-reward--boost{grid-template-columns:minmax(0,.72fr) minmax(0,1fr)}
+.army-rec-poster{margin:0;min-width:0;overflow:hidden;background:var(--color-bg)}
+.army-rec-poster img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.75,.1,1)}
+@media (hover:hover){.army-rec-reward--boost:hover .army-rec-poster img{transform:scale(1.04)}}
+@media (max-width:560px){.army-rec-reward--boost{grid-template-columns:minmax(0,1fr)}.army-rec-poster img{height:auto}}
+@keyframes army-boost{to{background-position:-220% 0}}
+@media (prefers-reduced-motion:reduce){.army-rec-reward--boost{animation:none}}
 </style>
 </helmet>
 <div ref="{{ rootRef }}" style="position:relative;min-height:100svh;display:flex;flex-direction:column;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);overflow:clip">
@@ -288,11 +298,19 @@ html.army-aim .army-trailer button{cursor:pointer!important}
 <p>1 Diamante equivale a R$ 1 em valor dentro do ARMY.</p>
 </div>
 </div>
+<div class="army-rec-reward army-rec-reward--boost">
+<figure class="army-rec-poster"><img src="assets/booster.webp" width="1122" height="1402" alt="Cartaz Fortaleça o ARMY, seja booster: operador entrega um saco de diamantes a um recruta" loading="lazy" decoding="async"></figure>
+<div class="army-rec-value">
+<span class="army-rec-boost-label">Booster do Discord</span>
+<strong>1 recruta <span>= 2 diamantes</span></strong>
+<p>Impulsione o Discord do ARMY e ganhe o dobro por cada recruta válido.</p>
+</div>
+</div>
 </div>
 <ol class="army-rec-steps">
 <li data-rv="2" class="army-rec-step army-fx-row"><span class="army-rec-num">01</span><div><h3>Entre no Discord</h3><p>Acesse a comunidade oficial do ARMY.</p></div></li>
 <li data-rv="3" class="army-rec-step army-fx-row"><span class="army-rec-num">02</span><div><h3>Gere seu link</h3><p>Utilize o sistema de recrutamento dentro do Discord para receber seu link exclusivo.</p></div></li>
-<li data-rv="4" class="army-rec-step army-fx-row"><span class="army-rec-num">03</span><div><h3>Recrute e ganhe</h3><p>Cada jogador válido recrutado rende 1 Diamante para sua conta.</p></div></li>
+<li data-rv="4" class="army-rec-step army-fx-row"><span class="army-rec-num">03</span><div><h3>Recrute e ganhe</h3><p>Cada jogador válido recrutado rende 1 Diamante para sua conta, ou 2 se você for booster.</p></div></li>
 </ol>
 <div data-rv="2" class="army-rec-cta">
 <p class="army-rec-call">Monte seu esquadrão. Acumule Diamantes. Comece o lançamento na frente.</p>
