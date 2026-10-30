@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/gif" href="assets/favicon.gif">
 <script src="./support.js"></script>
 </head>
 <body>
@@ -137,6 +138,10 @@ html.army-aim .army-trailer button{cursor:pointer!important}
 @media (max-width:560px){.army-rec-reward--boost{grid-template-columns:minmax(0,1fr)}.army-rec-poster img{height:auto}}
 @keyframes army-boost{to{background-position:-220% 0}}
 @media (prefers-reduced-motion:reduce){.army-rec-reward--boost{animation:none}}
+.army-logo{display:block;flex:none;width:155px;height:46px;overflow:hidden}
+.army-logo img{display:block;width:183px;height:auto;transform:translateY(3px)}
+@media (max-width:480px){.army-logo{width:126px;height:38px}.army-logo img{width:149px}}
+@media (prefers-reduced-motion:reduce){.army-logo{width:auto;height:24px}.army-logo img{width:auto;height:24px;transform:none}}
 </style>
 </helmet>
 <div ref="{{ rootRef }}" style="position:relative;min-height:100svh;display:flex;flex-direction:column;background:var(--color-bg);color:var(--color-text);font-family:var(--font-body);overflow:clip">
@@ -157,7 +162,7 @@ html.army-aim .army-trailer button{cursor:pointer!important}
 <header style="position:relative;z-index:2;background:var(--color-bg);border-bottom:2px solid var(--color-divider)">
 <div class="army-fx-rail army-fx-rail--b" aria-hidden="true"><i></i></div>
 <div style="max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,56px);height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px">
-<img src="assets/army-logo-alpha.png" alt="ARMY PVP" style="height:24px;width:auto;display:block">
+<picture class="army-logo"><source srcset="assets/army-logo.gif" media="(prefers-reduced-motion: no-preference)"><img src="assets/army-logo-alpha.png" alt="ARMY PVP"></picture>
 <span class="army-tag army-tag--sm"><span ref="{{ dotRef }}" class="army-tag-round"></span><span class="army-tag-label">{{ headStatus }}</span></span>
 </div>
 </header>
@@ -415,7 +420,7 @@ class Component extends DCLogic {
     document.addEventListener('mouseover', this.onOver); document.documentElement.addEventListener('mouseleave', this.onLeave);
     document.addEventListener('visibilitychange', this.onVis);
     if (this.trailerRef.current) this.trailerRef.current.addEventListener('close', this.onTrailerClose);
-    this.setupCursor(); this.tick(); this.setupReveals(); this.setupFx();
+    this.setupCursor(); this.tick(); this.setupReveals(); this.setupFx(); this.setupTab();
     armyAssets().then(() => { if (this._alive) requestAnimationFrame(() => { armyShow(); this.animIn(); }); });
   }
   componentWillUnmount() {
@@ -423,7 +428,7 @@ class Component extends DCLogic {
     window.removeEventListener('mousemove', this.onMouse); window.removeEventListener('mousedown', this.onDown);
     document.removeEventListener('mouseover', this.onOver); document.documentElement.removeEventListener('mouseleave', this.onLeave);
     document.removeEventListener('visibilitychange', this.onVis);
-    this.stopFx();
+    this.stopFx(); clearTimeout(this.tt); clearTimeout(this.ft);
     if (this.trailerRef.current) this.trailerRef.current.removeEventListener('close', this.onTrailerClose);
     document.documentElement.classList.remove('army-aim'); if (this.cursorStyle) this.cursorStyle.remove();
   }
@@ -508,6 +513,52 @@ class Component extends DCLogic {
   closeTrailer = () => { if (this.trailerRef.current) this.trailerRef.current.close(); };
   backdropTrailer = (e) => { if (e.target === this.trailerRef.current) this.closeTrailer(); };
   onTrailerClose = () => { if (this.videoRef.current) this.videoRef.current.pause(); };
+
+  // ---------- aba do navegador ----------
+  setupTab() {
+    if (this.reduced) return;
+    this.scrollTitle();
+    this.ft = setTimeout(() => this.animateIcon(), 1500);
+  }
+  // o título corre para o texto inteiro aparecer na aba, com pausa ao voltar ao início
+  scrollTitle() {
+    const chars = Array.from((document.title || 'Lançamento — ARMY PVP') + ' • ');
+    let i = 0;
+    const step = () => {
+      if (!this._alive) return;
+      i = (i + 1) % chars.length;
+      document.title = chars.slice(i).concat(chars.slice(0, i)).join('');
+      this.tt = setTimeout(step, i === 0 ? 1800 : 280);
+    };
+    this.tt = setTimeout(step, 2500);
+  }
+  // Chrome e Edge não animam GIF no ícone; aqui os quadros são trocados um a um
+  async animateIcon() {
+    const link = document.querySelector('link[rel="icon"]');
+    if (!link || !('ImageDecoder' in window)) return;
+    try {
+      const data = await (await fetch(link.href)).arrayBuffer(), dec = new ImageDecoder({ data, type: 'image/gif' });
+      await dec.tracks.ready; await dec.completed;
+      const total = dec.tracks.selectedTrack.frameCount, c = document.createElement('canvas'), frames = [];
+      c.width = c.height = 32; const ctx = c.getContext('2d');
+      let ms = 0;
+      for (let i = 0; i < total; i++) {
+        const { image } = await dec.decode({ frameIndex: i });
+        ms += (image.duration || 100000) / 1000;
+        if (ms >= 120 || i === total - 1) { ctx.clearRect(0, 0, 32, 32); ctx.drawImage(image, 0, 0, 32, 32); frames.push({ href: c.toDataURL('image/png'), ms }); ms = 0; }
+        image.close();
+      }
+      dec.close();
+      let k = 0;
+      const swap = () => {
+        if (!this._alive) return;
+        link.href = frames[k].href;
+        this.ft = setTimeout(swap, frames[k].ms);
+        k = (k + 1) % frames.length;
+      };
+      if (this._alive) swap();
+    } catch (e) { /* sem animação: fica o GIF estático */ }
+  }
 
   // ---------- efeitos ----------
   setupFx() {
